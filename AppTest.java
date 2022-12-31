@@ -1,32 +1,34 @@
+package project.library;
+
+//import static org.junit.Assert.*;
 import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertSame;
 
-
-import java.sql.SQLException;
+import java.net.MalformedURLException;
 
 import org.junit.Test;
 
-public class AppTest
+/**
+ * Unit test for simple App.
+ */
+public class AppTest 
 {
-    App app = new App();
-
-    public void checkRightOrderCreating() throws SQLException
+		AppUser apUs = new AppUser();
+	    @Test
+    public void checkRightAuthorization() throws MalformedURLException
     {
-        assertEquals("order created", app.createOrder("2", "Замок", "o1978shew", true, true));
+    	assertEquals("right password", apUs.authorization("anna12lr"));
     }
     @Test
-    public void checkBookFalseOrderCreating() throws SQLException
+    public void checkWrongAuthorization() throws MalformedURLException
     {
-        assertEquals("Book already reserved", app.createOrder("2", "Як працює Google", "o1978shew", false, true));
+    	assertEquals("wrong password", apUs.authorization("Bnna12lr"));
     }
     @Test
-    public void checkStudentFalseOrderCreating() throws SQLException
+    public void checkRegistration() throws MalformedURLException
     {
-        assertEquals("Student has 10 books", app.createOrder("2", "Як працює Google", "o1978shew", true, false));
+    	assertEquals("User registred", apUs.register("anOlks19", "Богданова Анна Олександрівна", "12.04.1999", "+380958324651"));
     }
-    @Test
-    public void checkBothFalseOrderCreating() throws SQLException
-    {
-        assertEquals("Book already reserved", app.createOrder("2", "Як працює Google", "o1978shew", false, false));
-    }
-
 }
+
+
