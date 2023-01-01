@@ -5,9 +5,9 @@ import java.sql.SQLException;
 
 import org.junit.Test;
 
-public class AppTest
+public class AppTest1
 {
-    App app = new App();
+    App1 app = new App1();
     @Test
     public void checkAddingBook() throws SQLException
     {
