@@ -1,7 +1,7 @@
 import java.sql.*;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
-public class App
+public class App1
 {
     Connection c = null;
     Statement st = null;
